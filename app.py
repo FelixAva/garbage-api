@@ -16,7 +16,7 @@ def get_categories():
   cursor.close()
   conn.close()
 
-  categories = [{"id": row[0], "name": row[1]} for row in results]
+  categories = [{"id": row[0], "name": row[1], "z_total_items": len(results)} for row in results]
   return jsonify(categories)
 
 if __name__ == '__main__':
